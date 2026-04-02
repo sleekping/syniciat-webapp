@@ -1,17 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins, Montserrat, Lato, Orbitron } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+export const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'], // for headings
+  variable: '--font-montserrat',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+export const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'], // buttons
+  variable: '--font-poppins',
 });
 
+export const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'], // accents
+  variable: '--font-orbitron',
+});
+export const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'], // for body text
+  variable: '--font-inter',
+});
+
+export const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400'], // navbar / links
+  variable: '--font-lato',
+});
 export const metadata: Metadata = {
   title: "Syniciat",
   description: "Top-rated solar energy solutions | Expert consultation, professional installation & maintenance by certified installers. Go solar today!",
@@ -25,9 +44,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${inter.variable} ${poppins.variable} ${orbitron.variable} ${lato.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="">
+        <Navbar />
+        <main>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
