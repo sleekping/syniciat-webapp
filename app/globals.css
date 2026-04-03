@@ -127,14 +127,18 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
-
+ 
 @layer base {
   * {
     @apply border-border outline-ring/50 p-0 m-0 box-border;
   }
 
-  html {
-    @apply text-[62.5%] text-base;
+ 
+html {
+    @apply text-[62.5%];
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 
   a:hover {
@@ -164,9 +168,6 @@
     @apply text-3xl font-montserrat;
   }
 
-  body {
-    @apply bg-background text-foreground;
-  }
 
   p {
     @apply font-inter text-lg;

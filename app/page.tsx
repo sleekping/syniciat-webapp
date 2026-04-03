@@ -2,14 +2,18 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-yellow-200 h-screen flex items-center justify-center
+    <div className="bg-yellow-200 h-screen relative flex items-center justify-center w-full
     ">
-      {/* <Image preload={true}/> */}
-      <h1>Home</h1>
-      {/* <video autoPlay="" loop="" playsInline="" preload="metadata" className="absolute inset-0 w-full h-full object-cover" poster="/assets/images/landing_page_hero1.png">
-      <source src="https://res.cloudinary.com/dhnd4s77j/video/upload/v1770742914/VN20260210_130411_1_fjd1zv.mp4" type="video/mp4"/>Your browser does not support the video tag.
-      
-      </video> */}
+      {/* upload video to cloudinary later */}
+      <video autoPlay loop muted playsInline preload="metadata" className="inset-0 w-full h-full object-cover" poster="/images/hero-image.jpg">
+        <source src="/images/labs.mp4" type="video/mp4" />Your browser does not support the video tag.
+      </video>
+      {/* texts */}
+
+      <div className="absolute space-y-2 w-200">
+        <h1 className="text-white font-montserrat text-8xl font-medium">Power Your World. Protect Your Peace.</h1>
+        <p className="text-white font-inter text-3xl">End blackouts and insecurity. Nationwide support, guaranteed.</p>
+      </div>
     </div>
   );
 }

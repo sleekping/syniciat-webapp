@@ -83,7 +83,7 @@ const links: NavLinks = [
 
 export function Navbar() {
     return (
-        <nav className="flex justify-between items-center py-4 px-8 bg-background text-foreground">
+        <nav className="z-50 relative flex justify-between items-center py-4 px-8 bg-transparent text-foreground">
             {/* logo */}
             <Link href="/">
                 <Image src="/logo.jpeg" loading="eager"
@@ -99,7 +99,7 @@ export function Navbar() {
                             <ActiveLink href={link.href}>{link.title}</ActiveLink>
                         )}
 
-                        {/* {
+                        {
                             "type" in link && link.type === "product" && (
                                 <div className="relative flex justify-center">
                                     <button className="flex text-gray-500 items-center gap-1">{link.title} <IoChevronDown /></button>
@@ -134,7 +134,7 @@ export function Navbar() {
                                         <div className="flex flex-row gap-36 pt-4">
                                             {link.dropdownData.projects.map((v, i) => (
                                                 <Link href={v.href} key={i} className="flex flex-col gap-7 pt-6">
-                                                     <Image src={v.image} alt={v.title} width={100} height={100} className="w-24 h-24" /> 
+                                                     {/* <Image src={v.image} alt={v.title} width={100} height={100} className="w-24 h-24" />  */}
                                                     <p className="text-2xl font-medium  text-gray-500">{v.title}</p>
                                                 </Link>
                                             ))}
@@ -142,7 +142,7 @@ export function Navbar() {
                                     </div>
                                 </div>
                             )
-                        }*/}
+                        }
                     </div>
 
                 ))}
