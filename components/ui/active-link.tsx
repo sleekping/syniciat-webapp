@@ -15,7 +15,7 @@ export function ActiveLink({ href, children }: ActiveLinkProps) {
   return (
     <Link
       href={href}
-      className={isActive ? "text-primary font-bold" : "text-gray-500"} 
+      className={isActive ? "text-primary font-bold" : ""} 
     >
       {children}
     </Link>

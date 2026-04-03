@@ -55,6 +55,13 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
 
+
+
+  --breakpoint-mdLap: 996px;
+  --breakpoint-tab: 778px;
+  --breakpoint-mdPhone: 550px;
+  --breakpoint-phone: 426px;
+
 }
 
 :root {
@@ -126,17 +133,43 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+
+
 }
- 
+
+@layer components {
+  nav {
+    @apply flex w-full fixed top-0 z-100 ease-in-out justify-between items-center py-4 px-8 text-foreground transition-all duration-300
+  }
+
+  nav.active {
+    @apply bg-white/95 backdrop-blur-md shadow-md
+  }
+
+  nav * a {
+    @apply text-white hover:text-primary transition-colors duration-100 ease-in-out
+  }
+
+  nav.active * a {
+    @apply text-gray-500
+  }
+
+  .product-dropdown {
+    @apply hidden group-hover:flex flex-col;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50 p-0 m-0 box-border;
   }
 
- 
-html {
+
+  html {
     @apply text-[62.5%];
   }
+
   body {
     @apply bg-background text-foreground;
   }
