@@ -187,7 +187,11 @@
     }
 
     nav .linkOpacityContainer {
-      @apply left-0 right-0 bottom-0 h-screen w-screen fixed place-items-end
+      @apply left-400 right-0 top-0 bottom-0 h-screen w-screen fixed place-items-end transition-all duration-300 ease-in-out;
+    }
+
+    nav .linkOpacityContainer.open {
+      @apply left-0
     }
 
     nav .linkContainer {
