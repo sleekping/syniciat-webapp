@@ -7,102 +7,44 @@ import { ActiveLink } from "../ui/active-link";
 import { IoChevronDown } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import { LiaTimesSolid } from "react-icons/lia";
-type NavLinks = (
-    | {
-        title: string;
-        href: string;
-    }
-    | {
-        title: string;
-        type: "product"
-        dropdownItem: {
-            heading: string;
-            product: {
-                href: string;
-                title: string;
-            }[];
-        }[];
-    }
+import Links from "./links";
 
-    | {
-        title: string;
-        type: "project",
-        dropdownData: {
-            heading: string;
-            subHeading: string;
-            projects: {
-                title: string;
-                image: string;
-            }[];
-        };
 
-    }
-)[];
-const links: NavLinks = [
-    { title: "Home", href: "/" },
-    { title: "About Us", href: "/about-us" },
-    {
-
-        title: "Products", type: "product", dropdownItem: [
-
-            {
-                heading: "Solar Products", product: [
-                    { title: "Solar Panels", href: "/products/solar/solar-panels" },
-                    { title: "Inverters", href: "/products/solar/inverters" },
-                    { title: "Batteries", href: "/products/solar/batteries" },
-                    { title: "Charge Controllers", href: "/products/solar/charge-controllers" },
-                    { title: "Solar Street Lights", href: "/products/solar/solar-street-lights" },
-                ],
-            },
-            {
-                heading: "Security Solutions", product: [
-                    { title: "CCTV Systems", href: "/products/security/cctv-systems" },
-                    { title: "House Wiring", href: "/products/security/house-wiring" },
-                    { title: "Electric Fencing", href: "/products/security/electric-fencing" },
-                ]
-            }
-
-        ]
-    },
-    { title: "Find Installers", href: "/find-installers" },
-
-    {
-        title: "Projects", type: "project",
-        dropdownData: {
-            heading: "Trusted Across Cities",
-            subHeading: "We've delivered successful solar and electrical projects in major cities.",
-            projects: [
-                { title: "Lagos", image: "" },
-                { title: "Abuja", image: "" },
-                { title: "Benin", image: "" },
-            ]
-
-        }
-    }, { title: "Blog", href: "/blog" },
-    { title: "Contact Us", href: "/contact-us" },
-]
-
-export function Navbar() {
+export function Navbar(): React.JSX.Element {
     // for the scroll effect
     const [activeScroll, setActiveScroll] = useState(false);
     // for the mobile menu
+    const [openDropdown, setOpenDropdown] = useState<number | null>(null);
     const [menuOpen, setMenuOpen] = useState(false);
-    console.log(menuOpen)
+
+    const handleScroll = () => {
+        setMenuOpen(false);
+        if (window.scrollY > 50) {
+            setActiveScroll(true);
+        } else {
+            setActiveScroll(false);
+        }
+    };
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setActiveScroll(true);
-            } else {
-                setActiveScroll(false);
-            }
-        };
+
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-    const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [menuOpen]);
     return (
         <nav className={activeScroll ? "active" : ""}  >
             {/* logo */}
@@ -114,14 +56,14 @@ export function Navbar() {
 
             {/* links */}
             <div className={`linkOpacityContainer max-mdLap:bg-[rgba(0,0,0,.5)]` + (menuOpen ? " open" : "")
-            }>
-                {/*+  (menuOpen ? " translate-x-0" : "translate-x-200") */}
+            } onClick={() => setMenuOpen(false)}>
 
-                <div className={"gap-10 flex linkContainer"}>
+                <div className={"gap-10 flex linkContainer hide-scrollbar"} onClick={(e) => e.stopPropagation()}>
+                    <div className="">
 
-                    <LiaTimesSolid className={`cursor-pointer text-3xl place-self-end mt-10 hidden max-mdLap:block mb-10 text-gray-500 hover:text-primary transition-colors duration-200`} onClick={() => setMenuOpen(false)} />
-
-                    {links.map((link, id) => (
+                        <LiaTimesSolid className={`cursor-pointer text-3xl place-self-end mt-10 hidden max-mdLap:block mb-10 text-gray-500 hover:text-primary transition-colors duration-200`} onClick={() => setMenuOpen(false)} />
+                    </div>
+                    {Links.map((link, id) => (
                         <div key={id}>
                             {"href" in link && (
                                 <ActiveLink href={link.href}>{link.title}</ActiveLink>
@@ -167,9 +109,9 @@ export function Navbar() {
                                             <p className="text-gray-500 pt-4 font-medium text-xl  max-mdLap:hidden">{link.dropdownData.subHeading}</p>
                                             <div className="flex flex-row  max-mdLap:flex-col max-mdLap:gap-4 gap-36 pt-4 max-mdLap:pl-8 max-mdLap:pt-0">
                                                 {link.dropdownData.projects.map((v, i) => (
-                                                    <Link href={{ pathname: "/projects", query: { city: v.title } }} key={i} className="flex flex-col gap-7 pt-6">
-                                                        {/* <Image src={v.image} alt={v.title} width={100} height={100} className="w-24 h-24" />  */}
-                                                        <p className="text-2xl font-medium  text-gray-500">{v.title}</p>
+                                                    <Link href={{ pathname: "/projects", query: { city: v.title } }} key={i} className="flex flex-col gap-7 pt-6 text-2xl font-medium  text-gray-500 ">
+                                                        <Image src={v.image} alt={v.title} width={100} height={100} className="w-24 h-24 block max-mdLap:hidden" />
+                                                        <p className="text-2xl font-medium  text-gray-500 hover:text-primary transition-colors duration-100 ease-in-out">{v.title}</p>
                                                     </Link>
                                                 ))}
                                             </div>
@@ -180,7 +122,7 @@ export function Navbar() {
                         </div>
 
                     ))}
-                    <Link href="/contact-us" className="max-mdLap:block hidden mt-2 text-center px-4 py-4 bg-primary text-white rounded-md">Get a quote</Link>
+                    <Link href="/contact-us" className="max-mdLap:block hidden mt-2 text-center px-4 py-4 bg-primary text-white rounded-md max-mdLap:mb-9   ">Get a quote</Link>
 
                 </div>
 
@@ -188,7 +130,7 @@ export function Navbar() {
             </div>
             <Link href="/contact-us" className="max-mdLap:hidden px-4 py-2 bg-primary text-white rounded-md">Get a quote</Link>
 
-            <IoMenu className={`cursor-pointer text-5xl text-white hidden max-mdLap:block `} onClick={() => setMenuOpen(true)} />
+            <IoMenu className={`cursor-pointer text-5xl hidden max-mdLap:block ${activeScroll ? " text-gray-500" : "text-white"}`} onClick={() => setMenuOpen(true)} />
         </nav>
     )
 }
