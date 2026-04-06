@@ -13,11 +13,17 @@ export default function Home() {
         </video>
         {/* texts */}
 
-        <div className="absolute top-0 h-[inherit] flex items-center w-full bg-[rgba(0,0,0,0.6)]">
-          <div className="content w-1/2  px-10 space-y-5">
-            <h1 className="text-white text-8xl font-semibold">Power Your World. Protect Your Peace.</h1>
-            <p className="text-white font-maven text-4xl font-medium">Say goodbye to blackouts and insecurity with reliable energy and nationwide support you can trust.</p>
-            <Link href={""} className="bg-primary text-2xl text-white px-20 py-6 rounded-xl inline-flex gap-3 items-center">Get a free quote <BsArrowRight  className="font-semibold text-3xl"/></Link>
+       <div className="absolute top-0 h-[inherit] flex items-center w-full bg-[rgba(0,0,0,0.6)]">
+          <div className="content px-22 space-y-5 max-tab:px-10 max-mdLap:px-18 max-[600px]:px-8">
+            <h1 className="text-white leading-[1.2] text-8xl font-bold w-7/12  max-[1200px]:w-2/3 max-mdLap:text-7xl max-mdLap:w-3/4 max-tab:text-6xl max-[600px]:w-full">
+              {/* Uninterrupted Power Complete Peace of Mind */}
+              Uninterrupted <span className="text-secondary">
+                Power Total Peace
+              </span>  of Mind
+
+            </h1>
+            <p className="text-white font-maven font-medium text-3xl leading-relaxed w-1/2 max-mdLap:w-2/3 max-tab:w-3/4 max-tab:text-2xl max-[600px]:w-full">Say goodbye to blackouts and insecurity with reliable energy and nationwide support you can trust.</p>
+            <Link href={""} className="bg-primary text-2xl text-white px-20 py-6 rounded-xl inline-flex gap-3 items-center">Get a free quote <BsArrowRight className="font-semibold text-3xl" /></Link>
           </div>
 
         </div>
