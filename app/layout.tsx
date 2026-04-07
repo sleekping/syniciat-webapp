@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, Montserrat, Lato, Orbitron, Maven_Pro } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar/navbar";
+import { Navbar } from "@/components/navbar/Navbar";
 
 export const montserrat = Montserrat({
   subsets: ['latin'],
