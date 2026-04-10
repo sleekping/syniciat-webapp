@@ -13,10 +13,9 @@
 
   --font-montserrat: var(--font-montserrat);
   --font-inter: var(--font-inter);
-  --font-lato: var(--font-lato);
   --font-poppins: var(--font-poppins);
   --font-orbitron: var(--font-orbitron);
-  --font-maven: var(--font-maven);
+
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -43,6 +42,7 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -66,13 +66,16 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --color-black: rgb(17, 24, 39);
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(10, 10, 10);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: rgb(10, 10, 10);
   --primary: rgba(16, 76, 137, 1);
+
+  --primary-dark: rgb(13, 62, 112);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: rgba(251, 205, 41, 1);
   --secondary-foreground: oklch(0.205 0 0);
@@ -103,6 +106,7 @@
 }
 
 .dark {
+  --primary-dark: oklch(0.488 0.243 264.376);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -158,6 +162,11 @@
 
   .dropdown-container button .icon {
     @apply transition-transform duration-200 ease-in-out;
+  }
+
+
+  .pageLink {
+    @apply bg-primary text-2xl text-white px-20 py-6 rounded-xl inline-flex gap-3 items-center transition-all hover:px-25 duration-500 ease-in-out hover:bg-primary-dark;
   }
 
   @media (min-width:996px) {
@@ -274,18 +283,26 @@
     @apply cursor-pointer text-2xl font-medium font-poppins;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-montserrat;
+  }
 
   h1 {
-    @apply text-4xl font-montserrat;
+    @apply text-4xl;
   }
 
   h2 {
-    @apply text-3xl font-montserrat;
+    @apply text-3xl;
   }
 
 
   p {
-    @apply font-inter text-lg;
+    @apply font-poppins leading-relaxed text-xl;
   }
 
 }

@@ -22,8 +22,8 @@ const HeroSection = (): React.JSX.Element => {
                         </span>  of Mind
 
                     </h1>
-                    <p className="text-white font-maven font-medium text-3xl leading-relaxed w-1/2 max-mdLap:w-2/3 max-tab:w-3/4 max-tab:text-2xl max-[600px]:w-full">Say goodbye to blackouts and insecurity with reliable energy and nationwide support you can trust.</p>
-                    <Link href={"/"} className="bg-primary text-2xl text-white px-20 py-6 rounded-xl inline-flex gap-3 items-center">Get a free quote <BsArrowRight className="font-semibold text-3xl" /></Link>
+                    <p className="text-white font-medium text-3xl leading-relaxed w-1/2 max-mdLap:w-2/3 max-tab:w-3/4 max-tab:text-2xl max-[600px]:w-full">Say goodbye to blackouts and insecurity with reliable energy and nationwide support you can trust.</p>
+                    <Link href={"/"} className="pageLink">Get a free quote <BsArrowRight className="font-semibold text-3xl" /></Link>
                 </div>
 
             </div>

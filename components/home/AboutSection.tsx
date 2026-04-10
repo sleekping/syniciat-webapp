@@ -1,17 +1,60 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { BsArrowRight } from 'react-icons/bs'
+const about = [
+    { icon: "", heading: "Smart Energy", subheading: "Reliable solar power with lower costs" },
+    { icon: "", heading: "Smart Security", subheading: "Advanced systems that keep you protected" },
+    { icon: "", heading: "GPS Tracking", subheading: "Real-time location and asset monitoring" },
+    { icon: "", heading: "Built to Perform", subheading: "Durable systems you can depend on" },
+]
 const AboutSection = (): React.JSX.Element => {
     return (
-        <section className='mx-30 flex gap-10'>
+        <section className='px-30 grid lg:grid-cols-2 gap-24 items-center bg-gray-50 py-20'>
 
-            <div>
-                <Image src={"/images/about_us.jpeg"} loading='lazy' className='w-260 h-240 object-cover rounded-2xl' width={400} height={400} alt='company' />
+            <div className=''>
+                <div className='relative'>
+                    <Image src={"/images/about_us.jpeg"} loading='lazy' className='w-full h-180 object-center object-cover rounded-2xl' width={400} height={400} alt='company' />
+                    <div className="absolute -bottom-20  bg-primary -right-10 p-8 rounded-2xl">
+                        <h4 className='text-white text-5xl font-extrabold flex flex-col'>3+<span className='font-normal text-2xl'>Years Experience</span></h4>
+                    </div>
+                </div>
+
             </div>
-            <div className='space-y-5'>
-                <h2 className='text-3xl font-bold text-primary'>About Us</h2>
-                <p className='text-lg text-gray-600'>We are a team of passionate developers dedicated to creating innovative solutions that empower businesses and individuals alike. 
-                    Our mission is to leverage technology to solve real-world problems and enhance the way people interact with the digital world.</p>
+            <div className='space-y-5 '>
+                <h1 className='text-2xl font-semibold text-primary'>About Us</h1>
+                <h2 className='text-5xl font-bold'>Syniciat Energy & Tech Solutions</h2>
+                <div className="w-20 h-1 bg-yellow rounded-full"></div>
+                <div className='space-y-4 text-gray-600 leading-relaxed'>
+                    <p className='text-2xl'>Syniciat was founded with one clear goal: to deliver smart, reliable, and modern energy and security solutions that power, protect, and connect homes and businesses seamlessly.</p>
+                    <p className='text-2xl'>What started as a vision to solve everyday challenges like unstable power and rising security concerns has grown into a trusted brand providing <span className='font-medium text-foreground'> solar energy systems, advanced surveillance, GPS tracking, and integrated smart technologies.</span> We design every solution to be efficient, durable, and tailored to meet the unique needs of each client.</p>
+                    <p className='text-2xl'>At Syniciat, we don’t just provide systems — we deliver confidence and peace of mind. Every project is executed with precision, technical expertise, and a commitment to long-term performance, ensuring our clients stay powered, secure, and in control at all times.</p>
+                </div>
+
+                <div className='space-y-10'>
+
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                        {about.map((v, i) => (
+                            <div key={i} className='flex items-start space-x-3 p-8 rounded-2xl bg-white border border-gray-100 focus:ring-green-300 hover:border-green-200 hover:shadow-md transition-all focus:outline-none focus:ring-2 '>
+                                {/* icon */}
+
+                                <div className='bg-primary opacity-30 rounded-lg'></div>
+                
+                    
+                                <div className='space-y-3'>
+                                    <h4 className='text-foreground font-semibold text-xl'>{v.heading}</h4>
+                                    <p className='text-gray-600 text-lg'>{v.subheading}</p>
+                                </div>
+                            </div>
+                        )
+                        )}
+                    </div>
+                    <Link href={"/about"} className='pageLink'>Read More <BsArrowRight className="font-semibold text-3xl" /></Link>
+                </div>
             </div>
+
+
         </section>
 
     )
