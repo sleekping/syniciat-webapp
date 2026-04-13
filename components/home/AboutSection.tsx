@@ -14,20 +14,21 @@ const about = [
 ]
 const AboutSection = (): React.JSX.Element => {
     return (
-        <section className='px-30 grid lg:grid-cols-2 gap-24 items-center bg-gray-50 py-20 max-mdLap:px-25 max-tab:px-20 max-mdPhone:px-15'>
+        <section className='px-30 grid lg:grid-cols-2 gap-24 items-center bg-gray-50 py-20 max-mdLap:px-25 max-tab:px-20 max-mdPhone:px-15' aria-labelledby='about title'>
 
             <div className=''>
                 <div className='relative'>
-                    <Image src={"/images/about_us.jpeg"} loading='lazy' className='w-full h-180  max-tab:h-150 object-center object-cover rounded-2xl' width={400} height={400} alt='company' />
-                    <div className="absolute -bottom-20  bg-primary -right-10 p-8 rounded-2xl">
-                        <h4 className='text-white text-5xl font-extrabold flex flex-col'>3+<span className='font-normal text-2xl'>Years Experience</span></h4>
+                    <Image src={"/images/about_us.jpeg"} loading='lazy' className='w-full h-180  max-tab:h-150 object-center object-cover rounded-2xl' width={400} height={400} alt="Syniciat Energy & Tech Solutions workspace and operations"
+                    />
+                    <div className="absolute -bottom-20  bg-primary -right-10 p-8 rounded-2xl" aria-hidden="true">
+                        <h4 className='text-white text-5xl font-extrabold flex flex-col' aria-label='3 plus years experience'>3+<span className='font-normal text-2xl'>Years Experience</span></h4>
                     </div>
                 </div>
 
             </div>
             <div className='space-y-5 '>
-                <h1 className='text-2xl font-semibold text-primary'>About Us</h1>
-                <h2 className='text-5xl font-bold'>Syniciat Energy & Tech Solutions</h2>
+                <h2 className='text-2xl font-semibold text-primary' id="about-title" >About Us</h2>
+                <h3 className='text-5xl font-bold'>Syniciat Energy & Tech Solutions</h3>
                 <div className="w-35 h-1.5 bg-primary rounded-full"></div>
                 <div className='space-y-5 text-gray-600 leading-relaxed'>
                     <p className='text-2xl'>Syniciat was founded with one clear goal: to deliver smart, reliable, and modern energy and security solutions that power, protect, and connect homes and businesses seamlessly.</p>
@@ -40,10 +41,10 @@ const AboutSection = (): React.JSX.Element => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                         {about.map((v, i) => (
-                            <div key={i} className='flex items-start space-x-3 p-8 rounded-2xl bg-white border border-gray-100  hover:border-primary/20 hover:shadow-md transition-all focus:outline-none focus:ring-2 '>
+                            <article key={i} aria-label={v.heading} className='flex items-start space-x-3 p-8 rounded-2xl bg-white border border-gray-100  hover:border-primary/20 hover:shadow-md transition-all focus:outline-none focus:ring-2 '>
                                 {/* icon */}
 
-                                <div className='bg-primary/10 rounded-lg'>
+                                <div className='bg-primary/10 rounded-lg' aria-hidden="true">
                                     <v.icon className='text-primary text-3xl m-3' />
                                 </div>
 
@@ -52,11 +53,11 @@ const AboutSection = (): React.JSX.Element => {
                                     <h4 className='text-foreground font-semibold text-xl'>{v.heading}</h4>
                                     <p className='text-gray-600 text-lg'>{v.subheading}</p>
                                 </div>
-                            </div>
+                            </article>
                         )
                         )}
                     </div>
-                    <Link href={"/about"} className='pageLink'>Read More <BsArrowRight className="font-semibold text-3xl" /></Link>
+                    <Link href={"/about"} className='pageLink' aria-label="Read more about Syniciat Energy & Tech Solutions">Read More <BsArrowRight className="font-semibold text-3xl" aria-hidden="true" /></Link>
                 </div>
             </div>
 
