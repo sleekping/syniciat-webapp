@@ -1,8 +1,11 @@
+import Hero from '@/components/about-us/Hero'
 import React from 'react'
 
-const page = () => {
+const page = (): React.JSX.Element => {
     return (
-        <div>page</div>
+        <main>
+            <Hero />
+        </main>
     )
 }
 
