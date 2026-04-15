@@ -9,7 +9,7 @@ const Hero = (): React.JSX.Element => {
             <div className="animateContainer">
                 <div className="animateItem"></div>
             </div>
-
-        </section>)
+        </section>
+    )
 }
 export default Hero

@@ -21,7 +21,7 @@ const AboutSection = (): React.JSX.Element => {
                     <Image src={"/images/about_us.jpeg"} loading='lazy' className='w-full h-180  max-tab:h-150 object-center object-cover rounded-2xl' width={400} height={400} alt="Syniciat Energy & Tech Solutions workspace and operations"
                     />
                     <div className="absolute -bottom-20  bg-primary -right-10 p-8 rounded-2xl" aria-hidden="true">
-                        <h4 className='text-white text-5xl font-extrabold flex flex-col' aria-label='3 plus years experience'>3+<span className='font-normal text-2xl'>Years Experience</span></h4>
+                        <h4 className='text-white text-5xl font-extrabold flex flex-col'>5+<span className='font-normal text-2xl'>Years Experience</span></h4>
                     </div>
                 </div>
 
