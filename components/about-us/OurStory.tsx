@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 const OurStory = (): React.JSX.Element => {
     return (
-        <section aria-labelledby="our-story" className='grid grid-cols-2 max-mdLap:grid-cols-1  gap-16 max-tab:gap-20 px-30 py-20 max-mdLap:px-25 max-tab:px-20 max-mdPhone:px-15'>
+        <section aria-labelledby="our-story" className='grid grid-cols-2 max-mdLap:grid-cols-1  gap-16 max-tab:gap-20 px-30 py-25 max-tab:py-20 max-mdLap:px-25 max-tab:px-20 max-mdPhone:px-15'>
             <div className=''>
                 <div className='relative'>
                     <Image src={"/images/cctv.jpg"} loading='lazy' className='w-full h-180  max-tab:h-150 object-center object-cover rounded-2xl' width={400} height={400} alt="CCTV Surveilance system installed by Syniciat Energy & Tech Solutions"
