@@ -1,3 +1,4 @@
+import CoreValues from '@/components/about-us/CoreValues'
 import Hero from '@/components/about-us/Hero'
 import Mission from '@/components/about-us/Mission'
 import OurStory from '@/components/about-us/OurStory'
@@ -9,7 +10,7 @@ const page = (): React.JSX.Element => {
             <Hero />
             <OurStory />
             <Mission />
-
+            <CoreValues />
         </main>
     )
 }
