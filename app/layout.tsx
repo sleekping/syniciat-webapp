@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en" data-scroll-behavior="smooth"
       className={`${montserrat.variable} ${inter.variable} ${poppins.variable} ${orbitron.variable} h-full antialiased`}
     >
       <body className="">

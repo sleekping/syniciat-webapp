@@ -15,7 +15,7 @@ const OurStory = (): React.JSX.Element => {
 
             <div className=''>
                 <div className="header">
-                    <h3 className='text-primary text-2xl uppercase tracking-wide  font-semibold' id="our-story">Our Story</h3>
+                    <p className='text-primary text-2xl uppercase tracking-wide  font-semibold' id="our-story">Our Story</p>
                     <h2 className='text-6xl font-bold mt-3 mb-8 max-tab:text-5xl max-mdPhone:text-4xl'>Powering Your World, Securing Your Future</h2>
                     <div className="w-35 h-1.5 bg-primary rounded-full mb-8"></div>
                     <div className='space-y-6 text-gray-600 leading-relaxed pt-4'>

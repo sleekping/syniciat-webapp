@@ -41,10 +41,10 @@ const values = [
 const CoreValues = (): React.JSX.Element => {
 
     return (
-        <section className='px-20 py-20  space-y-20'>
+        <section className='px-20 py-20 space-y-20' id="core-values">
             <div className="text-center mb-20 place-items-center">
-                <h2 className='text-2xl uppercase font-semibold text-primary tracking-wide'>What Drives Us</h2>
-                <h3 className='text-5xl font-bold mt-3.5 mb-6.5'>Our Core Values</h3>
+                <p className='text-2xl uppercase font-semibold text-primary tracking-wide'>Why Choose Us</p>
+                <h2 className='text-5xl font-bold mt-3.5 mb-6.5'>Our Core Values</h2>
                 <div className="w-35 h-1.5 bg-primary rounded-full mb-8"></div>
                 <p className='mt-8 text-gray-600 text-2xl'>These principles shape every decision we make and every conversation we have.</p>
             </div>
@@ -63,7 +63,7 @@ const CoreValues = (): React.JSX.Element => {
                     </article>
                 ))}
             </div>
-        </section >
+        </section>
     )
 }
 
