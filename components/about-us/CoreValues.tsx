@@ -59,7 +59,7 @@ const CoreValues = (): React.JSX.Element => {
                         </div>
                         <h3 className='text-3xl font-semibold'>{v.heading}</h3>
                         <p className='text-gray-600 text-2xl leading-relaxed mt-4'>{v.subheading}</p>
-                      
+
                     </article>
                 ))}
             </div>
