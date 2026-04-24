@@ -17,12 +17,12 @@ const missionArray = [
 const Mission = (): React.JSX.Element => {
 
     return (
-        <div className="bg-gray-50 flex gap-10 px-30 py-20 max-mdLap:px-15 max-tab:flex-col">
+        <div className="bg-gray-50 flex gap-10 px-30 py-20 max-mdLap:px-15 max-tab:px-10 max-tab:flex-col">
 
             {missionArray.map((value, index) => (
                 <div key={index} className='bg-white flex-1 rounded-2xl border-primary/20 border-2
                 shadow-sm  hover:border-primary/50 transition-all ease-in-out duration-500 hover:shadow-xl group               
-                px-10 py-10'>
+                px-10 py-10 max-mdPhone:px-6'>
                     <div className="bg-primary/10 group-hover:bg-primary transition-all ease-in-out duration-300 w-16 h-16 rounded-lg flex items-center justify-center mb-5" aria-hidden="true">
                         {<value.icon className='text-primary group-hover:text-white' size={"2rem"} />}
                     </div>

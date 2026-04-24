@@ -41,7 +41,7 @@ const values = [
 const CoreValues = (): React.JSX.Element => {
 
     return (
-        <section className='px-20 py-20 space-y-20' id="core-values">
+        <section className='px-20 py-20 space-y-20 max-tab:px-10' id="core-values">
             <div className="text-center mb-20 place-items-center">
                 <p className='text-2xl uppercase font-semibold text-primary tracking-wide'>Why Choose Us</p>
                 <h2 className='text-5xl font-bold mt-3.5 mb-6.5'>Our Core Values</h2>
@@ -52,7 +52,7 @@ const CoreValues = (): React.JSX.Element => {
                 {values.map((v, i) => (
                     <article key={i} className='bg-white flex-1 rounded-2xl border-primary/20 border-2
                 shadow-sm  hover:border-primary/50 transition-all ease-in-out duration-500 hover:shadow-xl group               
-                px-10 py-10'>
+                px-10 py-10 max-mdPhone:px-6'>
 
                         <div className="bg-primary/10 group-hover:bg-primary transition-all ease-in-out duration-300 w-16 h-16 rounded-lg flex items-center justify-center mb-5" aria-hidden="true">
                             {<v.icon className='text-primary group-hover:text-white' size={"2rem"} />}
