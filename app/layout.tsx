@@ -21,11 +21,6 @@ export const inter = Inter({
   variable: '--font-inter',
 });
 
-export const orbitron = Orbitron({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-  variable: '--font-orbitron',
-});
 export const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600'], // buttons// navbar / links
@@ -61,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en" data-scroll-behavior="smooth"
-      className={`${montserrat.variable} ${inter.variable} ${poppins.variable} ${orbitron.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${inter.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="">
         <Navbar />
