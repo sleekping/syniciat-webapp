@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const JoinUs = () => {
+const JoinUs = (): React.JSX.Element => {
     return (
 
         <section className="px-6 md:px-12 lg:px-20 py-16 bg-gray-50" role='region'>
