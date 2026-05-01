@@ -12,7 +12,7 @@ const team = [
         details: "Behind Syniciat is a dedicated team of engineers, technicians, and support specialists committed to delivering seamless solar solutions — from system design to installation and beyond. Every member plays a critical role in ensuring quality, reliability, and customer satisfaction."
     }
 ]
-const OurTeam = () => {
+const OurTeam = ():React.JSX.Element => {
     return (
         <section className='px-20 py-20 space-y-20 max-tab:px-10' id="our-team"
             aria-labelledby="our-team-heading">

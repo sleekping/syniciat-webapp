@@ -9,12 +9,12 @@ const JoinUs = () => {
 
                 {/* Heading */}
                 <h2 className="text-5xl font-bold text-white max-mdLap:text-4xl max-md:text-3xl pb-2">
-                   Ready to Be Part of Something Bigger?
+                    Ready to Be Part of Something Bigger?
                 </h2>
 
                 {/* Subtext */}
                 <p className="pb-4 text-white/90 max-md:text-xl max-mdlap:text-2xl text-3xl">
-                     Discover the Syniciat Energy & Tech Solutions advantage. Let’s build a smarter, more reliable future together.</p>
+                    Discover the Syniciat Energy & Tech Solutions advantage. Let’s build a smarter, more reliable future together.</p>
 
                 {/* Links */}
                 <div className="flex max-sm:flex-col flex-row items-center justify-center gap-4">
