@@ -1,8 +1,11 @@
+import Hero from '@/components/find-installers/Hero'
 import React from 'react'
 
 const page = (): React.JSX.Element => {
     return (
-        <div>page</div>
+        <main>
+            <Hero />
+        </main>
     )
 }
 
