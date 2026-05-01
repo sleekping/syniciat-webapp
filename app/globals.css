@@ -279,7 +279,7 @@
   }
 
   a,
-  button,label {
+  button, label {
     @apply cursor-pointer text-2xl font-medium font-poppins;
   }
 
