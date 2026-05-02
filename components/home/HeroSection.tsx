@@ -1,11 +1,12 @@
-import { Link } from 'lucide-react'
+
+import Link from 'next/link'
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 
 const HeroSection = (): React.JSX.Element => {
     return (
 
-        <section className="bg-yellow-200 h-screen relative  w-full
+        <section className="bg-yellow-200 max-sm:h-[80vh] h-screen relative  w-full
     ">
             {/* upload video to cloudinary later */}
             <video autoPlay loop muted playsInline preload="metadata" className="inset-0 w-full h-full object-cover" poster="/images/hero-image.jpg">
@@ -23,7 +24,7 @@ const HeroSection = (): React.JSX.Element => {
 
                     </h1>
                     <p className="text-white font-medium text-3xl leading-relaxed w-1/2 max-mdLap:w-2/3 max-tab:w-3/4 max-tab:text-2xl max-[600px]:w-full">Say goodbye to blackouts and insecurity with reliable energy and nationwide support you can trust.</p>
-                    <Link href={"/"} className="pageLink">Get a free quote <BsArrowRight className="font-semibold text-3xl" /></Link>
+                    <Link rel='noopener noreferrer' href={`https://wa.me/2348166823498?text==${encodeURIComponent(`Hi Syniciat Energy & Tech Solutions, can I get a free quote`)}`} className="pageLink">Get a free quote <BsArrowRight className="font-semibold text-3xl" /></Link>
                 </div>
 
             </div>
