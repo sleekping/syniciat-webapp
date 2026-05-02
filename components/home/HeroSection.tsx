@@ -5,7 +5,7 @@ import { BsArrowRight } from 'react-icons/bs'
 const HeroSection = (): React.JSX.Element => {
     return (
 
-        <section className="bg-yellow-200 h-screen relative  w-full
+        <section className="bg-yellow-200 max-sm:h-[80vh] h-screen relative  w-full
     ">
             {/* upload video to cloudinary later */}
             <video autoPlay loop muted playsInline preload="metadata" className="inset-0 w-full h-full object-cover" poster="/images/hero-image.jpg">
