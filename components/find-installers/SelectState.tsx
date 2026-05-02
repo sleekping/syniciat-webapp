@@ -102,13 +102,13 @@ const SelectState = (): React.JSX.Element => {
                             </Command>
                         </PopoverContent>
                     </Popover>
-                    
+
                     {selected ?
-                        <div className='space-y-5'>
+                        (<div className='space-y-5'>
                             <Link target='_blank' href={`https://wa.me/2348166823498?text=${encodeURIComponent(`Hello, I would like to connect with a verified installer in ${selected}.Please guide me on the next steps.`)}`} className='w-full text-xl bg-primary text-white py-4 rounded-xl font-medium hover:bg-primary-dark transition  block text-center  max-phone:text-lg'>Connect with an installer in {selected}</Link>
                             <p className='text-gray-600 text-xl text-center max-phone:text-lg'> Look out for a WhatsApp message from our installer team — usually within 24 hours</p>
-                        </div>
-                        : <p className='pt-20 text-center text-xl tracking-wide'>Please pick a state to continue.</p>}
+                        </div>)
+                        : (<p className='pt-20 text-center text-xl tracking-wide'>Please pick a state to continue.</p>)}
                 </div>
 
 
