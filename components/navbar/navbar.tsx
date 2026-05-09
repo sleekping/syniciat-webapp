@@ -97,7 +97,7 @@ export function Navbar(): React.JSX.Element {
                                 )
                             }
 
-                            {
+                            {/* {
                                 "type" in link && link.type === "project" && (
                                     <div className={`dropdown-container group ${openDropdown === id ? "open" : ""
                                         }`}>
@@ -118,7 +118,7 @@ export function Navbar(): React.JSX.Element {
                                         </div>
                                     </div>
                                 )
-                            }
+                            } */}
                         </div>
 
                     ))}

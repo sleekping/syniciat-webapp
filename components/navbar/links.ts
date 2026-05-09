@@ -15,19 +15,19 @@ type NavLinks = (
         }[];
     }
 
-    | {
-        title: string;
-        type: "project",
-        dropdownData: {
-            heading: string;
-            subHeading: string;
-            projects: {
-                title: string;
-                image: string;
-            }[];
-        };
+    // | {
+    //     title: string;
+    //     type: "project",
+    //     dropdownData: {
+    //         heading: string;
+    //         subHeading: string;
+    //         projects: {
+    //             title: string;
+    //             image: string;
+    //         }[];
+    //     };
 
-    }
+    // }
 )[];
 const Links: NavLinks = [
     { title: "Home", href: "/" },
@@ -58,17 +58,18 @@ const Links: NavLinks = [
     { title: "Find Installers", href: "/find-installers" },
 
     {
-        title: "Projects", type: "project",
-        dropdownData: {
-            heading: "Trusted Across Cities",
-            subHeading: "We've delivered successful solar and electrical projects in major cities.",
-            projects: [
-                { title: "Lagos", image: "/images/lagos.png" },
-                { title: "Abuja", image: "/images/benin.png" },
-                { title: "Benin", image: "/images/benin.png" },
-            ]
+        title: "Projects", href:"/projects"
+        // type: "project",
+        // dropdownData: {
+        //     heading: "Trusted Across Cities",
+        //     subHeading: "We've delivered successful solar and electrical projects in major cities.",
+        //     projects: [
+        //         { title: "Lagos", image: "/images/lagos.png" },
+        //         { title: "Abuja", image: "/images/benin.png" },
+        //         { title: "Benin", image: "/images/benin.png" },
+        //     ]
 
-        }
+        // }
     }, { title: "Blog", href: "/blog" },
     { title: "Contact Us", href: "/contact-us" },
 ]

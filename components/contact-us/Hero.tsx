@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Hero = () => {
+const Hero = (): React.JSX.Element => {
     return (
         <section className="svg-container px-8 max-tab:px-4 h-[50vh] flex flex-col items-center text-center space-y-3 justify-center gap-4" aria-labelledby="contact-heading"
             aria-describedby="contact-subheading"
