@@ -37,7 +37,7 @@ const OurJourney = (): React.JSX.Element => {
             </div>
             <div className="mt-8">
 
-                <div className='relative flex gap-4 flex-col px-60  max-[1200px]:px-20  max-mdLap:px-0' role='list' aria-describedby="journey-description">
+                <div className='relative flex gap-4 flex-col px-60 min-[1600]:px-120  max-[1200px]:px-20  max-mdLap:px-0' role='list' aria-describedby="journey-description">
                     <div className="max-[900px]:hidden  block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20"></div>
 
                     {listItem.map((item, i) => (

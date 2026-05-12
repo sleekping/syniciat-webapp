@@ -70,7 +70,8 @@ const Links: NavLinks = [
         //     ]
 
         // }
-    }, { title: "Blog", href: "/blog" },
+    }, 
+    // { title: "Blog", href: "/blog" },
     { title: "Contact Us", href: "/contact-us" },
 ]
 export default Links;
