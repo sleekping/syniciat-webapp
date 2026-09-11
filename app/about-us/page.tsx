@@ -16,7 +16,7 @@ const page = (): React.JSX.Element => {
             <CoreValues />
             <OurJourney />
             <OurTeam />
-            <JoinUs />
+            {/* <JoinUs /> */}
         </main>
     )
 }

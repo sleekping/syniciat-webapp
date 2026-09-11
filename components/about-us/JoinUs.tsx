@@ -4,7 +4,7 @@ import React from 'react'
 const JoinUs = (): React.JSX.Element => {
     return (
 
-        <section className="px-6 md:px-12 lg:px-20 py-16 bg-gray-50" role='region'>
+        <section className="px-6 md:px-12 lg:px-20 py-16 " role='region'>
             <div className="max-w-400 mx-auto bg-primary rounded-2xl text-center px-6 md:px-12 py-14 shadow-md space-y-8">
 
                 {/* Heading */}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { IoRocketOutline } from 'react-icons/io5';
 import { TbTargetArrow } from "react-icons/tb";
+import ScrollReveal from '@/components/ui/ScrollReveal';
 const missionArray = [
     {
         heading: "Our Mission",
@@ -20,15 +21,17 @@ const Mission = (): React.JSX.Element => {
         <div className="bg-gray-50 flex gap-10 px-30 py-20 max-mdLap:px-15 max-tab:px-10 max-tab:flex-col">
 
             {missionArray.map((value, index) => (
-                <div key={index} className='bg-white flex-1 rounded-2xl border-primary/20 border-2
+                <ScrollReveal key={index} direction={index === 0 ? "left" : "right"}>
+                    <div className='bg-white flex-1 rounded-2xl border-primary/20 border-2
                 shadow-sm  hover:border-primary/50 transition-all ease-in-out duration-500 hover:shadow-xl group               
                 px-10 py-10 max-mdPhone:px-6'>
-                    <div className="bg-primary/10 group-hover:bg-primary transition-all ease-in-out duration-300 w-16 h-16 rounded-lg flex items-center justify-center mb-5" aria-hidden="true">
-                        {<value.icon className='text-primary group-hover:text-white' size={"2rem"} />}
+                        <div className="bg-primary/10 group-hover:bg-primary transition-all ease-in-out duration-300 w-16 h-16 rounded-lg flex items-center justify-center mb-5" aria-hidden="true">
+                            {<value.icon className='text-primary group-hover:text-white' size={"2rem"} />}
+                        </div>
+                        <h3 className='text-3xl font-semibold'>{value.heading}</h3>
+                        <p className='text-gray-600 text-2xl leading-relaxed mt-4'>{value.details}</p>
                     </div>
-                    <h3 className='text-3xl font-semibold'>{value.heading}</h3>
-                    <p className='text-gray-600 text-2xl leading-relaxed mt-4'>{value.details}</p>
-                </div>
+                </ScrollReveal>
             ))}
         </div>
     )

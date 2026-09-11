@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 const team = [
     {
         img: "/images/syniciat-ceo.jpeg",
@@ -12,7 +13,7 @@ const team = [
         details: "Behind Syniciat is a dedicated team of engineers, technicians, and support specialists committed to delivering seamless solar solutions — from system design to installation and beyond. Every member plays a critical role in ensuring quality, reliability, and customer satisfaction."
     }
 ]
-const OurTeam = ():React.JSX.Element => {
+const OurTeam = (): React.JSX.Element => {
     return (
         <section className='px-20 py-20 space-y-20 max-tab:px-10' id="our-team"
             aria-labelledby="our-team-heading">
@@ -23,7 +24,7 @@ const OurTeam = ():React.JSX.Element => {
                 <div className="w-35 h-1.5 bg-primary rounded-full mb-8" aria-hidden="true"></div>
                 <p className='mt-8 text-gray-600 text-2xl'>The visionaries and experts driving our mission forward.</p>
             </div>
-            <div className="grid grid-cols-2 gap-10 mx-50 max-xl:mx-10 max-lg:mx-0 max-mdLap:grid-cols-1">
+            <ScrollReveal className="grid grid-cols-2 gap-10 mx-50 max-xl:mx-10 max-lg:mx-0 max-mdLap:grid-cols-1">
                 {/* Placeholder for team members */}
                 {
                     team.map((v, i) => (
@@ -41,7 +42,7 @@ const OurTeam = ():React.JSX.Element => {
                         </article>
                     ))
                 }
-            </div>
+            </ScrollReveal>
         </section>
     )
 }

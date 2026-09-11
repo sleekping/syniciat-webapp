@@ -1,3 +1,4 @@
+import JoinUs from '@/components/about-us/JoinUs';
 import Contact from '@/components/contact-us/Contact'
 import Hero from '@/components/contact-us/Hero'
 import PreferWhatsapp from '@/components/contact-us/PreferWhatsapp'
@@ -9,6 +10,7 @@ const page = (): React.JSX.Element => {
             <Hero />
             <Contact />
             <PreferWhatsapp />
+            <JoinUs/>
         </main>)
 }
 

@@ -5,6 +5,7 @@ import { PiHandshake } from "react-icons/pi";
 import { TfiLightBulb } from "react-icons/tfi";
 import { GoGlobe } from "react-icons/go";
 import { LuAward } from "react-icons/lu";
+import ScrollReveal from '@/components/ui/ScrollReveal';
 const values = [
     {
         heading: "Uncompromising Quality",
@@ -48,7 +49,7 @@ const CoreValues = (): React.JSX.Element => {
                 <div className="w-35 h-1.5 bg-primary rounded-full mb-8"></div>
                 <p className='mt-8 text-gray-600 text-2xl'>These principles shape every decision we make and every conversation we have.</p>
             </div>
-            <div className="grid grid-cols-3 gap-10 max-mdLap:grid-cols-2 max-tab:grid-cols-1">
+            <ScrollReveal className="grid grid-cols-3 gap-10 max-mdLap:grid-cols-2 max-tab:grid-cols-1">
                 {values.map((v, i) => (
                     <article key={i} className='bg-white flex-1 rounded-2xl border-primary/20 border-2
                 shadow-sm  hover:border-primary/50 transition-all ease-in-out duration-500 hover:shadow-xl group               
@@ -62,7 +63,7 @@ const CoreValues = (): React.JSX.Element => {
 
                     </article>
                 ))}
-            </div>
+            </ScrollReveal>
         </section>
     )
 }

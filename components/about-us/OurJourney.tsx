@@ -1,4 +1,10 @@
-import React from 'react'
+"use client"
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, { useLayoutEffect, useRef } from 'react'
+
+gsap.registerPlugin(ScrollTrigger)
 const listItem = [
     {
         year: "2023",
@@ -26,8 +32,33 @@ const listItem = [
     },
 ]
 const OurJourney = (): React.JSX.Element => {
+    const container = useRef<HTMLElement | null>(null)
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            const cards = gsap.utils.toArray<HTMLElement>('[data-journey-card]')
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+            cards.forEach((card, index) => {
+                gsap.from(card, {
+                    x: index % 2 === 0 ? -120 : 120,
+                    opacity: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 82%',
+                        end: 'bottom 18%',
+                        toggleActions: 'play reverse play reverse',
+                    },
+                })
+            })
+        }, container)
+        return () => ctx.revert()
+    }, [])
+
     return (
-        <section className='px-20 py-20 max-tab:px-10 bg-gray-50 '
+        <section ref={container} className='px-20 py-20 max-tab:px-10 bg-gray-50 '
             id="our-journey"
             aria-labelledby="our-journey-heading">
             <div className='text-center place-items-center'>
@@ -42,7 +73,7 @@ const OurJourney = (): React.JSX.Element => {
 
                     {listItem.map((item, i) => (
                         <article className='mt-6 relative' role='listitem' key={i}>
-                            <div className={`${i % 2 === 0 ? 'mr-auto pr-50 max-mdLap:pr-110' : 'pl-50 ml-auto max-mdLap:pl-110'} w-3/5 max-mdLap:w-4/5 max-[900px]:w-full max-[900px]:pl-0 max-[900px]:pr-0`}>
+                            <div data-journey-card className={`${i % 2 === 0 ? 'mr-auto pr-50 max-mdLap:pr-110' : 'pl-50 ml-auto max-mdLap:pl-110'} w-3/5 max-mdLap:w-4/5 max-[900px]:w-full max-[900px]:pl-0 max-[900px]:pr-0`}>
                                 <div className="max-[900px]:hidden block absolute top-8 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white shadow-lg" aria-hidden="true"></div>
                                 <div className=' bg-white flex-1 rounded-2xl border-primary/20 border-2
                 shadow-sm  hover:border-primary/50 transition-all ease-in-out duration-500 hover:shadow-xl group               

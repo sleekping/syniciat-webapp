@@ -13,12 +13,12 @@ const companyLinks = [
 ];
 
 const productLinks = [
-  "Solar Panels",
-  "Solar Batteries",
-  "Solar Inverters",
-  "Charge Controllers",
-  "Solar Street Lights",
-  "Solar Lights",
+  { title: "Solar Panels", href: "/products/solar/solar-panels" },
+  { title: "Solar Batteries", href: "/products/solar/batteries" },
+  { title: "Solar Inverters", href: "/products/solar/inverters" },
+  { title: "Charge Controllers", href: "/products/solar/charge-controllers" },
+  { title: "Solar Street Lights", href: "/products/solar/solar-street-lights" },
+  { title: "CCTV Systems", href: "/products/security/cctv-systems" },
 ];
 
 const socialLinks = [
@@ -101,10 +101,10 @@ export default function Footer() {
               {productLinks.map((link, index) => (
                 <li key={index}>
                   <Link
-                    href={`/products/${link.toLowerCase().replace(" ", "-")}`}
+                    href={link.href}
                     className="hover:text-primary transition"
                   >
-                    {link}
+                    {link.title}
                   </Link>
                 </li>
               ))}

@@ -57,7 +57,7 @@ const AboutSection = (): React.JSX.Element => {
                         )
                         )}
                     </div>
-                    <Link href={"/about"} className='pageLink' aria-label="Read more about Syniciat Energy & Tech Solutions">Read More <BsArrowRight className="font-semibold text-3xl" aria-hidden="true" /></Link>
+                    <Link href={"/about-us"} className='pageLink' aria-label="Read more about Syniciat Energy & Tech Solutions">Read More <BsArrowRight className="font-semibold text-3xl" aria-hidden="true" /></Link>
                 </div>
             </div>
 
