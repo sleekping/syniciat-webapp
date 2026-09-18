@@ -98,7 +98,7 @@ const projectArray = [
 const Projects = (): React.JSX.Element => {
   return (
     <section
-      className='mx-20 py-20 max-tab:mx-10'
+      className='max-mdLap:px-25 px-30 max-tab:px-20 max-mdPhone:px-15 py-20 '
       aria-labelledby="projects-heading"
     >
 

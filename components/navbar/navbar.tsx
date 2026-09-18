@@ -8,9 +8,12 @@ import { IoChevronDown } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import { LiaTimesSolid } from "react-icons/lia";
 import Links from "./links";
+import { usePathname } from "next/navigation";
 
 
 export function Navbar(): React.JSX.Element {
+    const pathName = usePathname();
+
     // for the scroll effect
     const [activeScroll, setActiveScroll] = useState(false);
     // for the mobile menu
@@ -26,7 +29,6 @@ export function Navbar(): React.JSX.Element {
         }
     };
     useEffect(() => {
-
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -45,6 +47,10 @@ export function Navbar(): React.JSX.Element {
             document.body.style.overflow = "auto";
         };
     }, [menuOpen]);
+
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [pathName]);
     return (
         <nav className={activeScroll ? "active" : ""}  >
             {/* logo */}

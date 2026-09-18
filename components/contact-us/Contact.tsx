@@ -6,7 +6,7 @@ import { LuPhone } from "react-icons/lu";
 import ScrollReveal from '@/components/ui/ScrollReveal';
 const Contact = (): React.JSX.Element => {
     return (
-        <section className='grid grid-cols-2 gap-20 max-lg:grid-cols-1 px-20 py-20  pb-16 max-sm:px-10'>
+        <section className='grid grid-cols-2 gap-20 max-lg:grid-cols-1  py-20  pb-16 max-mdLap:px-25 px-30 max-tab:px-20 max-mdPhone:px-15'>
             <ScrollReveal direction="left">
                 <div className='space-y-8'>
                     <div className='space-y-3'>

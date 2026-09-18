@@ -58,7 +58,7 @@ const OurJourney = (): React.JSX.Element => {
     }, [])
 
     return (
-        <section ref={container} className='px-20 py-20 max-tab:px-10 bg-gray-50 '
+        <section ref={container} className=' bg-gray-50 px-20 py-20 max-tab:px-10'
             id="our-journey"
             aria-labelledby="our-journey-heading">
             <div className='text-center place-items-center'>

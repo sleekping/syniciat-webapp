@@ -58,12 +58,14 @@ const FAQSection = (): React.JSX.Element => {
 
                 <Accordion type="single" collapsible defaultValue="item-0" className="w-full gap-3">
                     {faqs.map((faq, index) => (
-                        <AccordionItem value={`item-${index}`} key={faq.question} className="w-full min-w-0 rounded-xl border border-gray-200 bg-white px-6 shadow-sm transition-colors hover:border-primary/40 max-mdPhone:px-4">
-                            <AccordionTrigger className="w-full min-w-0 gap-6 py-6 text-left text-xl font-semibold hover:no-underline max-mdPhone:text-lg">
+                        <AccordionItem value={`item-${index}`} key={faq.question} className="w-full min-w-0 border-b-[1.5px] border-gray-200  max-mdPhone:px-4 last:border-b-0">
+                          
+                           
+                            <AccordionTrigger className="w-full min-w-0 gap-6 py-6 text-left text-3xl font-medium hover:no-underline max-mdPhone:text-lg">
                                 <span className="min-w-0 flex-1">{faq.question}</span>
                             </AccordionTrigger>
                             <AccordionContent className="w-full min-w-0">
-                                <p className="max-w-4xl text-lg leading-relaxed text-gray-600">{faq.answer}</p>
+                                <p className="max-w-[inherit]  leading-relaxed  text-gray-600 text-2xl">{faq.answer}</p>
                             </AccordionContent>
                         </AccordionItem>
                     ))}

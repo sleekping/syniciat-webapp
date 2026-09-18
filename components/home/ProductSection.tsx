@@ -53,7 +53,7 @@ export const ProductSection = () => {
                 </div>
                 <div data-home-products-grid className="mt-12 grid gap-5 md:grid-cols-3">
                     {products.slice(0, 3).map((product) => (
-                        <Link data-home-product-card key={product.slug} href={`/products/${product.category}/${product.slug}`} className="group border border-gray-200 p-7 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg">
+                        <Link data-home-product-card key={product.slug} href={`/products/${product.category}/${product.slug}`} className="group border border-gray-200 p-7 rounded-xl transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg">
                             <p className="text-xl font-semibold uppercase tracking-wide text-gray-500">{product.eyebrow}</p><h3 className="mt-3 text-3xl font-bold">{product.title}</h3><p className="mt-3 text-xl leading-relaxed text-gray-600">{product.summary}</p><span className="mt-6 inline-flex items-center gap-3 text-xl font-semibold text-primary">Learn more <BsArrowRight className="transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
                         </Link>
                     ))}

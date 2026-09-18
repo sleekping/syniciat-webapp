@@ -57,5 +57,5 @@ export default function ScrollReveal({
         return () => ctx.revert()
     }, [delay, direction])
 
-    return <div ref={element} className={className}>{children}</div>
+    return <div ref={element} className={`${className ?? ""}`}>{children}</div>
 }

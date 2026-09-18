@@ -253,7 +253,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 p-0 m-0 box-border;
+    @apply border-border outline-ring/50 p-0 m-0 box-border ;
   }
 
 

@@ -42,7 +42,7 @@ const values = [
 const CoreValues = (): React.JSX.Element => {
 
     return (
-        <section className='px-20 py-20 space-y-20 max-tab:px-10' id="core-values">
+        <section className='max-mdLap:px-25 px-30 max-tab:px-20 max-mdPhone:px-15 py-20 space-y-20 ' id="core-values">
             <div className="text-center mb-20 place-items-center">
                 <p className='text-2xl uppercase font-semibold text-primary tracking-wide'>Why Choose Us</p>
                 <h2 className='text-5xl font-bold mt-3.5 mb-6.5'>Our Core Values</h2>

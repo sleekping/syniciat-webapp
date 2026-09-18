@@ -3,7 +3,7 @@ import Image from 'next/image'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 const OurStory = (): React.JSX.Element => {
     return (
-        <section aria-labelledby="our-story" className='grid grid-cols-2 max-mdLap:grid-cols-1  gap-16 max-tab:gap-20 px-30 py-25 max-tab:py-20 max-mdLap:px-25 max-tab:px-20 max-mdPhone:px-15'>
+        <section aria-labelledby="our-story" className='grid grid-cols-2 max-mdLap:grid-cols-1  gap-16 max-tab:gap-20  py-25 max-tab:py-20 max-mdLap:px-25 px-30 max-tab:px-20 max-mdPhone:px-15'>
             <ScrollReveal direction="left">
                 <div className=''>
                     <div className='relative'>
