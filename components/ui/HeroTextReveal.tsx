@@ -22,7 +22,7 @@ export default function HeroTextReveal({
     descriptionId,
     titleClassName,
     descriptionClassName,
-    children, containerClassName="svg-container px-8 max-tab:px-4 h-[50vh] flex flex-col items-center text-center space-y-5 justify-center gap-4"
+    children, containerClassName = "svg-container px-8 max-tab:px-4 h-[50vh] flex flex-col items-center text-center space-y-5 justify-center gap-4"
 }: HeroTextRevealProps): React.JSX.Element {
     const container = useRef<HTMLDivElement | null>(null)
 
@@ -33,7 +33,10 @@ export default function HeroTextReveal({
             gsap.timeline({ defaults: { ease: "power3.out" } })
                 .from("[data-hero-title]", { y: 44, autoAlpha: 0, duration: 0.9 })
                 .from("[data-hero-description]", { y: 24, autoAlpha: 0, duration: 0.75 }, "-=0.5")
-                .from("[data-hero-indicator]", { scaleX: 0, transformOrigin: "left center", autoAlpha: 0, duration: 0.6 }, "-=0.3")
+                .from("[data-hero-indicator]", {
+                    scaleX: 0,
+                    transformOrigin: "left center", autoAlpha: 0, duration: 0.6
+                }, "-=0.3")
         }, container)
 
         return () => ctx.revert()

@@ -12,28 +12,24 @@ const HeroSection = (): React.JSX.Element => {
     const ctaRef = useRef<HTMLAnchorElement | null>(null);
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            const tl = gsap.timeline();
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
 
-            tl.from(headerRef.current, {
-                y: 40,
-                opacity: 0,
+            gsap.timeline({ defaults: { ease: "power3.out" } }).from(headerRef.current, {
+                y: 44,
                 duration: 1.2,
+                autoAlpha: 0,
                 ease: "power4.out"
             }).from(
                 subheaderRef.current,
                 {
-                    y: 20,
-                    opacity: 0,
+                    y: 24, autoAlpha: 0,
                     duration: 1,
-                    ease: "power3.out",
                 },
                 "-=0.6"
             ).from(ctaRef.current, {
-                y: 18,
-                opacity: 0,
+                y: 10,
                 duration: 0.7,
-                ease: "power3.out",
-            }, "-=0.45");
+            }, "-=0.3");
         }, container);
 
         return () => ctx.revert();

@@ -7,7 +7,7 @@ const Hero = (): React.JSX.Element => {
             aria-labelledby="projects-heading" aria-describedby="projects-subheading">
             <HeroTextReveal 
                 title="Explore Our Work"
-                description="Discover real-world installations completed by Kings Tech Solutions throughout Nigeria."
+                description="Discover real-world installations completed by Syniciat Energy & Tech Solutions throughout Nigeria."
                 titleId="projects-heading"
                 descriptionId="projects-subheading"
                 titleClassName='text-7xl max-mdLap:text-6xl max-tab:text-5xl max-mdPhone:text-4xl font-bold text-white'

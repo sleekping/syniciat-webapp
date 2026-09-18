@@ -14,21 +14,30 @@ export const ProductSection = () => {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+            const cards = gsap.utils.toArray<HTMLElement>('[data-home-product-card]')
 
-            gsap.from('[data-home-product-card]', {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                gsap.set(cards, { clearProps: 'all' })
+                return
+            }
+
+            gsap.fromTo(cards, {
                 y: 55,
-                opacity: 0,
+                autoAlpha: 0,
+            }, {
+                y: 0,
+                autoAlpha: 1,
                 duration: 0.8,
                 stagger: 0.12,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: '[data-home-products-grid]',
                     start: 'top 84%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play reverse play reverse',
+                    toggleActions: 'play none none none',
                 },
             })
+
+            ScrollTrigger.refresh()
         }, container)
 
         return () => ctx.revert()
