@@ -10,7 +10,7 @@ const page = (): React.JSX.Element => {
             <Hero />
             <Contact />
             <PreferWhatsapp />
-            <JoinUs/>
+            <JoinUs />
         </main>)
 }
 

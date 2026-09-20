@@ -253,12 +253,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 p-0 m-0 box-border ;
+    @apply border-border outline-ring/50 p-0 m-0 box-border;
   }
 
 
   html {
-    @apply text-[62.5%] scroll-smooth;
+    @apply text-[62.5%] scroll-smooth overflow-x-hidden;
+
   }
 
   body {
@@ -279,7 +280,7 @@
   }
 
   a,
-  button  {
+  button {
     @apply cursor-pointer text-2xl font-medium font-poppins;
   }
 

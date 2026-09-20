@@ -79,7 +79,9 @@ export function ProductPage({ product }: { product: Product }): React.JSX.Elemen
                     <h3 className="text-3xl font-bold">What you can expect</h3>
                     <ul className="mt-8 space-y-6">
                         {product.benefits.map((benefit) => (
-                            <li key={benefit} className="flex items-start gap-4 text-2xl text-gray-700"><span className="mt-3 h-3 w-3 shrink-0 rounded-full bg-primary" aria-hidden="true" />{benefit}</li>
+                            <li key={benefit} className="flex items-start gap-4 text-2xl text-gray-700">
+                                <span className="mt-3 h-3 w-3 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                                {benefit}</li>
                         ))}
                     </ul>
                 </div>
