@@ -48,7 +48,7 @@ export default function ScrollReveal({
                         trigger: element.current,
                         start: "top 86%",
                         end: "bottom 18%",
-                        toggleActions: "play reverse play reverse",
+                        toggleActions: "play none none reverse",
                     },
                 },
             )

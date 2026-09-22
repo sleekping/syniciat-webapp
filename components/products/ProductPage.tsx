@@ -48,7 +48,7 @@ export function ProductPage({ product }: { product: Product }): React.JSX.Elemen
                     trigger: "[data-product-details]",
                     start: "top 78%",
                     end: "bottom 25%",
-                    toggleActions: "play reverse play reverse",
+                        toggleActions: "play none none reverse",
                 },
             });
         }, container);

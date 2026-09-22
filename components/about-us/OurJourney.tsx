@@ -49,7 +49,7 @@ const OurJourney = (): React.JSX.Element => {
                         trigger: card,
                         start: 'top 82%',
                         end: 'bottom 18%',
-                        toggleActions: 'play reverse play reverse',
+                        toggleActions: "play none none reverse",
                     },
                 })
             })
