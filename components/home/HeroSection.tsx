@@ -9,25 +9,27 @@ const HeroSection = (): React.JSX.Element => {
     const container = useRef<HTMLDivElement | null>(null);
     const headerRef = useRef<HTMLHeadingElement | null>(null);
     const subheaderRef = useRef<HTMLParagraphElement | null>(null);
+    const ctaRef = useRef<HTMLAnchorElement | null>(null);
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            const tl = gsap.timeline();
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
 
-            tl.from(headerRef.current, {
-                y: 40,
-                opacity: 0,
+            gsap.timeline({ defaults: { ease: "power3.out" } }).from(headerRef.current, {
+                y: 44,
                 duration: 1.2,
+                autoAlpha: 0,
                 ease: "power4.out"
             }).from(
                 subheaderRef.current,
                 {
-                    y: 20,
-                    opacity: 0,
+                    y: 24, autoAlpha: 0,
                     duration: 1,
-                    ease: "power3.out",
                 },
                 "-=0.6"
-            );
+            ).from(ctaRef.current, {
+                y: 10,
+                duration: 0.7,
+            }, "-=0.3");
         }, container);
 
         return () => ctx.revert();
@@ -52,7 +54,7 @@ const HeroSection = (): React.JSX.Element => {
 
                     </h1>
                     <p ref={subheaderRef} className="text-white font-medium text-3xl leading-relaxed w-1/2 max-mdLap:w-2/3 max-tab:w-3/4 max-tab:text-2xl max-[600px]:w-full">Say goodbye to blackouts and insecurity with reliable energy and nationwide support you can trust.</p>
-                    <Link rel='noopener noreferrer' href={`https://wa.me/2348166823498?text==${encodeURIComponent(`Hi Syniciat Energy & Tech Solutions, can I get a free quote`)}`} className="pageLink">Get a free quote <BsArrowRight className="font-semibold text-3xl" /></Link>
+                    <Link ref={ctaRef} rel='noopener noreferrer' href={`https://wa.me/2348166823498?text==${encodeURIComponent(`Hi Syniciat Energy & Tech Solutions, can I get a free quote`)}`} className="pageLink">Get a free quote <BsArrowRight className="font-semibold text-3xl" /></Link>
                 </div>
 
             </div>
